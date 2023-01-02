@@ -14,7 +14,7 @@ export default function SideBar() {
       <span className='absolute top-5 left-5 text-xl' onClick={() =>setShowMenu(false)}>
           {icons.close}
       </span>
-      <div className='absolute bottom-[30vh] left-5 text-purple-500'>{icons.verfied}
+      <div className='absolute bottom-[10vh] left-5 text-purple-500'>{icons.verfied}
         <span className='ml-2 text-white'>Tryve</span>
       </div>
       <ul className='pt-32 mx-4'>
