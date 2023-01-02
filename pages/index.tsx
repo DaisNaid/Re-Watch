@@ -5,7 +5,7 @@ import { UserContext } from './_app';
 
 export default function Home() {
 
-  const { isDarkMode } = useContext(UserContext);
+  const isDarkMode = useContext(UserContext);
 
   return isDarkMode ? <DarkMode /> : <LightMode />
 }
