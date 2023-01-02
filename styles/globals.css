@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+.glass {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: rgba(10, 10, 10, 0.2);
+  box-shadow: 0 8px 32px rgb(2, 4, 24);
+  border-right: 2px solid rgba(255, 255, 255, .09);
+}
+
+.comet {
+  background: linear-gradient(to left, transparent, transparent),
+    linear-gradient(to left, white, transparent, transparent);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1s;
+}
+
+.comet:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

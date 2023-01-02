@@ -1,4 +1,4 @@
-import { ClassName } from "../utils/constantTypes";
+import { ClassName } from "../utils/types/constantTypes";
 
 const light:ClassName = {
     main_bg: 'bg-gradient-to-b from-yellow-700 to-red-600',

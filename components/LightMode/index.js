@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { useContext, useEffect } from 'react';
 import stars from '../../assets/images/stars.png';
-import moon from '../../assets/images/moon.png';
-import dark from '../../constants/DarkMode';
-import SideBar from '../../components/SideBar/index';
+import sun from '../../assets/images/sun.jpeg';
+import light from '../../constants/LightMode';
+import SideBar from '../SideBar/index';
 import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
 
-export default function DarkMode() {
+export default function LightMode() {
   const {showMenu, setShowMenu, isDarkMode, setIsDarkMode} = useContext(UserContext);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function DarkMode() {
   }, []);
 
   return (
-    <div id='main-bg' className={dark.main_bg}>
+    <div id='main-bg' className={light.main_bg}>
       <header className='p-4 overflow-hidden'>
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md'>
           Re-Watch
@@ -33,12 +33,12 @@ export default function DarkMode() {
           Never miss a likely favorite!
         </p>
         <section className='relative max-w-full max-h-full p-20'>
-          <Image id='stars' alt='stars' src={stars} className={dark.stars}/>
+          <Image id='stars' alt='stars' src={stars} className={light.stars}/>
           <Image
             id='star'
             alt='star'
-            src={moon}
-            className={dark.star}
+            src={sun}
+            className={light.star}
             onClick={() => setIsDarkMode(!isDarkMode)}
           />
         </section>
