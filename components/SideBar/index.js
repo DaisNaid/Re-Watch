@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../../pages/_app';
 import icons from '../../utils/icons';
+import AllDropdown from '../AllDropdownButton/index';
 
 //replace tryve with username from db -- line 18
 
@@ -19,22 +20,20 @@ export default function SideBar() {
       </div>
       <ul className='pt-32 mx-4'>
         <li onClick={() =>setShowMenu(false)}>
-          <Link href='/' className='text-white flex items-center p-4'>
+          <Link href='/' className='flex items-center p-4'>
             <p className='px-4 comet'>Home</p>
           </Link>
         </li>
+        <li>
+          <AllDropdown />
+        </li>
         <li onClick={() =>setShowMenu(false)}>
-          <Link href='/all' className='text-white flex items-center p-4'>
-            <p className='px-4 comet'>All</p>
+          <Link href='/music' className='flex items-center p-4'>
+            <p className='pl-4 comet'>Music Library</p>
           </Link>
         </li>
         <li onClick={() =>setShowMenu(false)}>
-          <Link href='/music' className='text-white flex items-center p-4'>
-            <p className='px-4 comet'>Music Libray</p>
-          </Link>
-        </li>
-        <li onClick={() =>setShowMenu(false)}>
-          <Link href='/wallpaper' className='text-white flex items-center p-4'>
+          <Link href='/wallpaper' className='flex items-center p-4'>
             <p className='px-4 comet'>Wallpapers</p>
           </Link>
         </li>
