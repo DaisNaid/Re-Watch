@@ -9,9 +9,10 @@ export const UserContext = React.createContext<Ctx | null>(null);
 export default function App({ Component, pageProps }: AppProps) {
   const [showMenu, setShowMenu] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [selectedTab, setSelectedTab] = useState('All');
 
   return (
-  <UserContext.Provider value={{showMenu, setShowMenu, isDarkMode, setIsDarkMode}}>
+  <UserContext.Provider value={{showMenu, setShowMenu, isDarkMode, setIsDarkMode, selectedTab, setSelectedTab}}>
     <Component {...pageProps} />
   </UserContext.Provider>
 )}

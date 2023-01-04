@@ -4,8 +4,8 @@ import { UserContext } from '../../pages/_app';
 import icons from '../../utils/icons';
 
 export default function AllDropdown() {
-    const [value, setValue] = useState('All');
-    const {setShowMenu} = useContext(UserContext);
+    const {setShowMenu, selectedTab, setSelectedTab} = useContext(UserContext);
+    const [value] = useState(selectedTab);
     const [icon, setIcon] = useState(icons.caretR);
 
     const handleDropdown = () => {
@@ -22,21 +22,21 @@ export default function AllDropdown() {
     };
 
     const select = (e) => {
-        setValue(e);
-        console.log('test',value)
-        // setShowMenu(false);
+        const selected = e.target.innerText;
+        setSelectedTab(selected);
+        setShowMenu(false);
     };
 
   return (
     <div className='flex items-center p-8 max-h-8 no-underline comet'>
         <span className='mr-4 hover:text-purple-500' onClick={handleDropdown}>{icon}</span>
-        <span>All</span>
+        <span>{value}</span>
         <div className='watch-drop absolute top-60 right-0 bg-gradient-to-r from-darkanime via-darkanime to-transparent'>
             <ul className='py-2'>
-                <li className='pb-2' value='Test' onClick={(e) => select(e.target.value)}><Link href="#">All</Link></li>
-                <li className='py-2' value='Watching' onClick={(e) => select(e.currentTarget.value)}><Link href="#">Watching</Link></li>
-                <li className='py-2'><Link href="#">Completed</Link></li>
-                <li className='pt-2'><Link href="#">Plan to Watch</Link></li>
+                <li className='pb-2' onClick={(e) => select(e)}><Link href="#all">All</Link></li>
+                <li className='py-2' onClick={(e) => select(e)}><Link href="#watching">Watching</Link></li>
+                <li className='py-2' onClick={(e) => select(e)}><Link href="#completed">Completed</Link></li>
+                <li className='pt-2' onClick={(e) => select(e)}><Link href="#plantowatch">Plan to Watch</Link></li>
             </ul>
         </div>
     </div>
