@@ -1,18 +1,16 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import React from 'react';
-import { useState } from 'react';
 import { Ctx } from '../utils/types/contextTypes';
+import useGlobalState from '../utils/globalStates/index';
 
 export const UserContext = React.createContext<Ctx | null>(null);
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [selectedTab, setSelectedTab] = useState('All');
+  const globalStates = useGlobalState();
 
   return (
-  <UserContext.Provider value={{showMenu, setShowMenu, isDarkMode, setIsDarkMode, selectedTab, setSelectedTab}}>
+  <UserContext.Provider value={ globalStates }>
     <Component {...pageProps} />
   </UserContext.Provider>
 )}
