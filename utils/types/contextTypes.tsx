@@ -6,7 +6,9 @@ export interface Ctx {
   showMenu: boolean;
   isDarkMode: boolean;
   selectedTab: string;
+  isUser: boolean;
   setShowMenu: Dispatch<SetStateAction<boolean>>;
   setIsDarkMode: Dispatch<SetStateAction<boolean>>;
   setSelectedTab: Dispatch<SetStateAction<string>>;
+  setIsUser: Dispatch<SetStateAction<boolean>>;
 };

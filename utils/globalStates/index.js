@@ -4,6 +4,7 @@ export default function useGlobalState() {
     const [showMenu, setShowMenu] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(true);
     const [selectedTab, setSelectedTab] = useState('All');
+    const [isUser, setIsUser] = useState(false);
 
     const globalStates = {
         showMenu,
@@ -11,7 +12,9 @@ export default function useGlobalState() {
         isDarkMode,
         setIsDarkMode,
         selectedTab,
-        setSelectedTab
+        setSelectedTab,
+        isUser,
+        setIsUser
     };
 
     return (globalStates);
