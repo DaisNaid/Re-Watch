@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function useGlobalState() {
     const [showMenu, setShowMenu] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const [selectedTab, setSelectedTab] = useState('All');
     const [isUser, setIsUser] = useState(false);
 
