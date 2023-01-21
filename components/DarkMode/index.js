@@ -25,8 +25,8 @@ export default function DarkMode() {
 
   return (
     <div id='main-bg' className={dark.main_bg}>
-      <header className='p-4 overflow-hidden'>
-        <h1 className='text-center font-bold text-3xl text-zinc shadow-md'>
+      <header className='overflow-hidden'>
+        <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
         <p className='text-center text-zinc pt-6 animate-glow_text'>
