@@ -7,7 +7,7 @@ import light from '../../constants/LightMode';
 //Add switch to Dark Mode
 
 export default function LightMode() {
-  const {showMenu, setShowMenu} = useContext(UserContext);
+  const {showMenu, setShowMenu, setIsDarkMode} = useContext(UserContext);
 
   return (
     <div className={light.main_bg}>
@@ -15,6 +15,7 @@ export default function LightMode() {
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
+        <span className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
       <main className='min-h-[85vh]'>
         <p className={light.motto}>
