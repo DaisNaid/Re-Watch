@@ -23,6 +23,15 @@ module.exports = {
         z: '50%',
       },
     },
+    animation: {
+      glow: 'glow 5s ease-in-out infinite',
+    },
+    keyframes: {
+      glow: {
+        '0%, 100%': { color: '#d4d4d8' },
+        '50%': { color: '#2b1055' },
+      }
+    },
   },
   plugins: [],
 }

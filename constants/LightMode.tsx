@@ -1,9 +1,8 @@
 import { ClassName } from "../utils/types/constantTypes";
 
 const light:ClassName = {
-    main_bg: 'bg-gradient-to-b from-yellow-700 to-red-600',
-    stars: 'hidden',
-    star: 'absolute top-0 left-[37%] object-cover mix-blend-screen opacity-70'
+    main_bg: 'bg-zinc',
+    motto: 'text-center text-darkanime animate-glow absolute top-z left-[22vw] p-4 border-2 border-darkanime'
 };
 
 export default light;
