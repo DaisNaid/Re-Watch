@@ -11,8 +11,8 @@ export default function LightMode() {
 
   return (
     <div className={light.main_bg}>
-      <header className='p-4 bg-lightanime'>
-        <h1 className='text-center font-bold text-3xl text-zinc shadow-md'>
+      <header className='bg-lightanime'>
+        <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
       </header>
