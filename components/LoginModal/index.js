@@ -1,15 +1,11 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../pages/_app";
 import icons from "../../utils/icons";
 import Form from 'react-bootstrap/Form';
 
-export default function LoginModal({appID}) {
+export default function LoginModal() {
     const { setIsUser } = useContext(UserContext);
     const [username, setUsername] = useState('');
-
-    useEffect(() => {
-      require('@passageidentity/passage-auth');
-    }, [])
 
     return (
     <div className="absolute opacity-100 z-10 pointer-events-auto
