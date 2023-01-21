@@ -61,6 +61,6 @@
 
 @media (prefers-color-scheme: light) {
   html {
-    color-scheme: white;
+    background-color: white;
   }
 }
