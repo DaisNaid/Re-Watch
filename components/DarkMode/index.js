@@ -29,7 +29,7 @@ export default function DarkMode() {
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md'>
           Re-Watch
         </h1>
-        <p className='text-center text-zinc pt-6 animate-glow'>
+        <p className='text-center text-zinc pt-6 animate-glow_text'>
           Never miss a likely favorite!
         </p>
         <section className='relative max-w-full max-h-full p-20'>

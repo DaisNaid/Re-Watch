@@ -9,7 +9,7 @@ import AllDropdown from '../AllDropdownButton/index';
 
 export default function SideBar() {
     
-    const {isUser, setShowMenu, setIsUser} = useContext(UserContext);
+    const {isUser, setShowMenu, setIsUser, isDarkMode} = useContext(UserContext);
 
     const LoginModal = useAuthDisplay(isUser);
  
@@ -43,7 +43,8 @@ export default function SideBar() {
         <span className='absolute top-5 left-5 text-xl' onClick={() =>setShowMenu(false)}>
             {icons.close}
         </span>
-        <div className='absolute bottom-[10vh] left-5 text-purple-500'>{icons.verfied}
+        <div className={isDarkMode ? 'absolute bottom-[10vh] left-5 text-purple-500' : 'absolute bottom-[10vh] left-5 text-lightanime'}>
+          {icons.verfied}
           <span className='ml-2 text-white'>Tryve</span>
         </div>
         <span id='signin' className='absolute top-5 right-5 text-xl' onClick={() => handleSignIn()}>

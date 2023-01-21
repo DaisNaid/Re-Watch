@@ -4,12 +4,14 @@ import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
 import light from '../../constants/LightMode';
 
+//Add switch to Dark Mode
+
 export default function LightMode() {
   const {showMenu, setShowMenu} = useContext(UserContext);
 
   return (
     <div className={light.main_bg}>
-      <header className='p-4 bg-darkanime'>
+      <header className='p-4 bg-lightanime'>
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md'>
           Re-Watch
         </h1>
@@ -17,7 +19,7 @@ export default function LightMode() {
       <main className='min-h-[85vh]'>
         <p className={light.motto}>
           Never miss a likely favorite!
-        </p>      
+        </p>   
         <span id='menu' className='absolute top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
           {icons.menu}
         </span>

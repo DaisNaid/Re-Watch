@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import dropDown from '../../constants/Dropdown';
 import { UserContext } from '../../pages/_app';
 import icons from '../../utils/icons';
 
 export default function AllDropdown() {
-    const {setShowMenu, selectedTab, setSelectedTab} = useContext(UserContext);
+    const {setShowMenu, selectedTab, setSelectedTab, isDarkMode} = useContext(UserContext);
     const [value] = useState(selectedTab);
     const [icon, setIcon] = useState(icons.caretR);
 
@@ -29,9 +30,9 @@ export default function AllDropdown() {
 
   return (
     <div className='flex items-center p-8 max-h-8 no-underline comet'>
-        <span className='mr-4 hover:text-purple-500' onClick={handleDropdown}>{icon}</span>
+        <span className={isDarkMode ? 'mr-4 hover:text-purple-500' : 'mr-4 hover:text-lightanime'} onClick={handleDropdown}>{icon}</span>
         <span>{value}</span>
-        <div className='watch-drop absolute top-60 right-0 bg-gradient-to-r from-darkanime via-darkanime to-transparent'>
+        <div className={isDarkMode ? dropDown.bg_dark : dropDown.bg_light}>
             <ul className='py-2'>
                 <li className='pb-2' onClick={(e) => select(e)}><Link href="#all">All</Link></li>
                 <li className='py-2' onClick={(e) => select(e)}><Link href="#watching">Watching</Link></li>

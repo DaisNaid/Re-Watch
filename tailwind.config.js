@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
       darkanime: '#2b1055',
-      lightanime: '#7597de',
+      lightanime: '#3e63dd',
+      light_inner: '#8da4ef',
       zinc: '#d4d4d8',
       violet: '#0f172a',
       squidred: '#ed1b76',
@@ -24,12 +25,17 @@ module.exports = {
       },
     },
     animation: {
-      glow: 'glow 5s ease-in-out infinite',
+      glow_text: 'glow_text 5s ease-in-out infinite',
+      glow_motto: 'glow_motto 6s ease-in-out infinite'
     },
     keyframes: {
-      glow: {
-        '0%, 100%': { color: '#d4d4d8' },
-        '50%': { color: '#2b1055' },
+      glow_text: {
+        '0%, 100%': { color: '#8da4ef' },
+        '50%': { color: 'white' },
+      },
+      glow_motto: {
+        '0%, 100%': { color: '#8da4ef', background: '#d4d4d8' },
+        '50%': { color: 'black', background: '#8da4ef' },
       }
     },
   },

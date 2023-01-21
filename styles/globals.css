@@ -20,6 +20,13 @@
   box-shadow: 0 8px 32px rgb(8, 8, 37);
 }
 
+.watch-drop.is-light {
+  border: 2px solid #3e63dd;
+  border-radius: 0.375rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px #8da4ef;
+}
+
 .watch-drop.is-open {
   display: block; 
   transition: 3s;
