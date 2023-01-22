@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import DarkMode from '../components/DarkMode/index';
 import LightMode from '../components/LightMode/index';
 import { UserContext } from './_app';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
   const { isDarkMode, setIsDarkMode } = useContext(UserContext);
