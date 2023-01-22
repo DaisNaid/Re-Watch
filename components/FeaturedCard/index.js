@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import series from '../../assets/data';
 import icons from '../../utils/icons';
-import { prominent } from 'color.js';
+import { average } from 'color.js';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../pages/_app';
 
@@ -10,8 +10,8 @@ export default function FeaturedCard ({containerStyle, imageStyle, previewStyle,
     const image = series[0].image;
     
     useEffect(() => {
-        prominent(image, {format: 'hex'}).then(color => {
-            setDominantColor(color[0]);
+        average(image, {amount:1, format: 'hex'}).then(color => {
+            setDominantColor(color);
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [image])
