@@ -11,7 +11,7 @@ export default function Home() {
       query: '(prefers-color-scheme: dark)',
     },
     undefined,
-    (isSystemDark) => setIsDark(isSystemDark)
+    (isSystemDark) => setIsDarkMode(isSystemDark)
   );
 
   // type error because Darkmode and Lightmode in tags are being recognized as types
