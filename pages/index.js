@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import DarkMode from '../components/DarkMode/index';
 import LightMode from '../components/LightMode/index';
 import { UserContext } from './_app';
@@ -12,11 +12,12 @@ export default function Home() {
       query: '(prefers-color-scheme: dark)',
     },
     undefined,
-    (isSystemDark) => {
-      setIsDarkMode(isSystemDark);
-      localStorage.setItem('darkmode', isSystemDark);
-    }
+    (isSystemDark) => setIsDarkMode(isSystemDark)
   );
+
+  useEffect(() => {
+    localStorage.setItem('darkmode', systemPrefersDark);
+  }, [systemPrefersDark])
 
   // type error because Darkmode and Lightmode in tags are being recognized as types
 
