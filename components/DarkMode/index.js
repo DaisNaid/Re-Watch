@@ -15,7 +15,7 @@ export default function DarkMode() {
   useEffect(() => {
     let mode = document.getElementById('modeToggle');
     mode.addEventListener('click', () => {
-      localStorage.setItem('darkmode', false);
+      JSON.stringify(localStorage.setItem('darkmode', false));
     })
     const motion = async () => {
       let stars = document.getElementById('stars');

@@ -15,13 +15,9 @@ export default function LightMode() {
 
     let mode = document.getElementById('modeToggle');
     mode.addEventListener('click', () => {
-      localStorage.setItem('darkmode', true);
+      JSON.stringify(localStorage.setItem('darkmode', true));
     })
   }, [dominantColor])
-
-  const handleDarkMode = () => {
-    localStorage.setItem('darkmode', systemPrefersDark);
-  }
 
   return (
     <div id='main_bg' className={light.main_bg}>
