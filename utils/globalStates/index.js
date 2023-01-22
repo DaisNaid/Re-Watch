@@ -5,7 +5,7 @@ export default function useGlobalState() {
 
     useEffect(() => {
         defaultMode.current = localStorage.getItem('darkmode')
-    }, [])
+    }, [isDarkMode])
         
     const [showMenu, setShowMenu] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(defaultMode.current);
