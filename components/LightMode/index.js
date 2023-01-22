@@ -25,7 +25,7 @@ export default function LightMode() {
           {icons.menu}
         </span>
         {showMenu ? <SideBar /> : <></>}
-        <div className='text-black text-xl absolute top-[70%] left-24'>Gallery Coming Soon...</div>
+        <div className='text-black text-xl absolute top-[70vh] left-24'>Gallery Coming Soon...</div>
       </main>
       <footer className='font-bold text-lightanime text-center p-4'>
         &copy; 2022 Re-Watch
