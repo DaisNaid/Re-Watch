@@ -4,8 +4,17 @@ import LightMode from '../components/LightMode/index';
 import { UserContext } from './_app';
 
 export default function Home() {
+  const { isDarkMode, setIsDarkMode } = useContext(UserContext);
+
+  const systemPrefersDark = useMediaQuery(
+    {
+      query: '(prefers-color-scheme: dark)',
+    },
+    undefined,
+    (isSystemDark) => setIsDark(isSystemDark)
+  );
+
   // type error because Darkmode and Lightmode in tags are being recognized as types
-  const { isDarkMode } = useContext(UserContext);
 
  return isDarkMode ? <DarkMode /> : <LightMode />
 }
