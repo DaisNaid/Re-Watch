@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import SideBar from '../SideBar/index';
 import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
@@ -7,17 +7,22 @@ import FeaturedCard from '../FeaturedCard/index';
 import featuredCard from '../../constants/FeaturedCard';
 
 export default function LightMode() {
-  const {showMenu, setShowMenu, setIsDarkMode} = useContext(UserContext);
+  const { showMenu, setShowMenu, setIsDarkMode, dominantColor } = useContext(UserContext);
+  
+  useEffect(() => {
+    let main_bg = document.getElementById('main_bg');
+    main_bg.style.setProperty('--dominantColor', dominantColor);
+  }, [dominantColor])
 
   return (
-    <div className={light.main_bg}>
+    <div id='main_bg' className={light.main_bg}>
       <header className='bg-lightanime'>
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
         <span className='absolute top-5 right-5 text-xl opacity-75 text-black dark:text-white' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
-      <main className='min-h-[85vh]'>
+      <main className='min-h-screen'>
         <FeaturedCard 
           containerStyle={featuredCard.containerLight}
           imageStyle={featuredCard.imageLight}
@@ -26,7 +31,7 @@ export default function LightMode() {
         />
         <p className={light.motto}>
           Never miss a likely favorite!
-        </p>   
+        </p>
         <span id='menu' className='absolute top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
           {icons.menu}
         </span>

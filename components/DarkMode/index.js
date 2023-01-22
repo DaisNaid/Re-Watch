@@ -10,7 +10,7 @@ import FeaturedCard from '../FeaturedCard';
 import featuredCard from '../../constants/FeaturedCard';
 
 export default function DarkMode() {
-  const {showMenu, setShowMenu, isDarkMode, setIsDarkMode} = useContext(UserContext);
+  const {showMenu, setShowMenu, isDarkMode, setIsDarkMode, dominantColor} = useContext(UserContext);
 
   useEffect(() => {
     const motion = async () => {
@@ -22,11 +22,16 @@ export default function DarkMode() {
         star.style.top = value * 1.05 + 'px';
       });
     };
+    const setColor = () => {
+      let main_bg = document.getElementById('content');
+      main_bg.style.setProperty('--dominantColor', dominantColor);
+    }
     motion();
-  }, []);
+    setColor();
+  }, [dominantColor]);
 
   return (
-    <div id='main-bg' className={dark.main_bg}>
+    <div id='main_bg' className={dark.main_bg}>
       <header className='overflow-hidden'>
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
@@ -46,7 +51,7 @@ export default function DarkMode() {
           />
         </section>
       </header>
-      <main className='min-h-[80vh]'>
+      <main id='content' className={dark.contentBg}>
         <FeaturedCard 
           containerStyle={featuredCard.containerDark} 
           imageStyle={featuredCard.imageDark}

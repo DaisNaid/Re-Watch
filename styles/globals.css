@@ -7,6 +7,16 @@ html {
   background-color: black;
 }
 
+.dominantColorBG {
+  --bg: linear-gradient(var(--dominantColor), var(--dominantColor), #d4d4d8);
+  background: var(--bg);
+}
+
+.dominantColorBG_dark {
+  --bg: linear-gradient(transparent, var(--dominantColor), black);
+  background: var(--bg);
+}
+
 .watch-drop {
   display: none;
   z-index: 1000;
