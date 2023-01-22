@@ -4,7 +4,7 @@
 
 html {
   color: white;
-  background-color: linear-gradient(to top, transparent, white);
+  background-color: linear-gradient(white, #3e63dd);
 }
 
 .watch-drop {
