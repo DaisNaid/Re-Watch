@@ -34,8 +34,8 @@ module.exports = {
         '50%': { color: 'white' },
       },
       glow_motto: {
-        '0%, 100%': { color: '#8da4ef', background: '#d4d4d8' },
-        '50%': { color: 'black', background: '#8da4ef' },
+        '0%, 100%': { color: 'black', background: '#8da4ef' },
+        '50%': { color: '#8da4ef', background: '#d4d4d8' }
       }
     },
   },
