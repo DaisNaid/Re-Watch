@@ -12,7 +12,10 @@ export default function Home() {
       query: '(prefers-color-scheme: dark)',
     },
     undefined,
-    (isSystemDark) => setIsDarkMode(isSystemDark)
+    (isSystemDark) => {
+      setIsDarkMode(isSystemDark);
+      localStorage.setItem('darkmode', isSystemDark);
+    }
   );
 
   // type error because Darkmode and Lightmode in tags are being recognized as types
