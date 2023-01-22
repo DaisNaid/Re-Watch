@@ -12,7 +12,16 @@ export default function LightMode() {
   useEffect(() => {
     let main_bg = document.getElementById('main_bg');
     main_bg.style.setProperty('--dominantColor', dominantColor);
+
+    let mode = document.getElementById('modeToggle');
+    mode.addEventListener('click', () => {
+      localStorage.setItem('darkmode', true);
+    })
   }, [dominantColor])
+
+  const handleDarkMode = () => {
+    localStorage.setItem('darkmode', systemPrefersDark);
+  }
 
   return (
     <div id='main_bg' className={light.main_bg}>
@@ -20,7 +29,7 @@ export default function LightMode() {
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
-        <span className='absolute top-5 right-5 text-xl opacity-75 text-black dark:text-white' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
+        <span id='modeToggle' className='absolute top-5 right-5 text-xl opacity-75 text-black dark:text-white' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
       <main className='min-h-screen'>
         <FeaturedCard 

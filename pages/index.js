@@ -15,10 +15,6 @@ export default function Home() {
     (isSystemDark) => setIsDarkMode(isSystemDark)
   );
 
-  useEffect(() => {
-    localStorage.setItem('darkmode', systemPrefersDark);
-  }, [systemPrefersDark])
-
   // type error because Darkmode and Lightmode in tags are being recognized as types
 
  return isDarkMode ? <DarkMode /> : <LightMode />

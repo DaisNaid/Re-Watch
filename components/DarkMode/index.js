@@ -13,6 +13,10 @@ export default function DarkMode() {
   const {showMenu, setShowMenu, isDarkMode, setIsDarkMode, dominantColor} = useContext(UserContext);
 
   useEffect(() => {
+    let mode = document.getElementById('modeToggle');
+    mode.addEventListener('click', () => {
+      localStorage.setItem('darkmode', false);
+    })
     const motion = async () => {
       let stars = document.getElementById('stars');
       let star = document.getElementById('star');
@@ -36,7 +40,7 @@ export default function DarkMode() {
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
-        <span className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(false)}>{icons.daylight}</span>
+        <span id='modeToggle' className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(false)}>{icons.daylight}</span>
         <p className='text-center text-zinc pt-6 animate-glow_text'>
           Never miss a likely favorite!
         </p>
