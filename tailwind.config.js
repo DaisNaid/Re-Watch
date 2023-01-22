@@ -27,7 +27,7 @@ module.exports = {
     },
     animation: {
       glow_text: 'glow_text 5s ease-in-out infinite',
-      glow_motto: 'glow_motto 6s ease-in-out 2'
+      glow_motto: 'glow_motto 60s ease-in-out infinite'
     },
     keyframes: {
       glow_text: {
@@ -35,8 +35,9 @@ module.exports = {
         '50%': { color: 'white' },
       },
       glow_motto: {
-        '0%, 100%': { color: 'black', background: '#8da4ef' },
-        '50%': { color: '#8da4ef', background: '#d4d4d8' }
+        '0%': { color: 'black', background: '#8da4ef' },
+        '10%': { color: '#8da4ef', background: '#d4d4d8' },
+        '20%, 100%': { color: 'black', background: '#8da4ef' }
       }
     },
   },

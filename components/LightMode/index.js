@@ -15,7 +15,7 @@ export default function LightMode() {
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
         </h1>
-        <span className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
+        <span className='absolute top-5 right-5 text-xl opacity-75 text-black dark:text-white' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
       <main className='min-h-[85vh]'>
         <FeaturedCard 
