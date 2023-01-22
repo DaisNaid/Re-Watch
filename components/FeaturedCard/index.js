@@ -10,8 +10,8 @@ export default function FeaturedCard ({containerStyle, imageStyle, previewStyle,
     const image = series[0].image;
     
     useEffect(() => {
-        prominent(image, {amount: 1, format: 'hex'}).then(color => {
-            setDominantColor(color)
+        prominent(image, {format: 'hex'}).then(color => {
+            setDominantColor(color[0]);
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [image])
