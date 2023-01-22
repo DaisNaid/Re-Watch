@@ -26,7 +26,7 @@ module.exports = {
     },
     animation: {
       glow_text: 'glow_text 5s ease-in-out infinite',
-      glow_motto: 'glow_motto 6s ease-in-out infinite'
+      glow_motto: 'glow_motto 6s ease-in-out 2'
     },
     keyframes: {
       glow_text: {
