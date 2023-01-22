@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function useGlobalState() {
-    const defaultMode = useRef(false);
     const [showMenu, setShowMenu] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(defaultMode.current);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     const [selectedTab, setSelectedTab] = useState('All');
     const [isUser, setIsUser] = useState(false);
     const [dominantColor, setDominantColor] = useState('#d4d4d8');
 
     useEffect(() => {
-        defaultMode.current = JSON.parse(localStorage.getItem('darkmode'));
-    }, [isDarkMode])
+        if(typeof window === 'object') {
+            setIsDarkMode(JSON.parse(localStorage.getItem('darkmode')));
+        }
+    }, [])
 
     const globalStates = {
         showMenu,
