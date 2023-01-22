@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext } from 'react';
 import SideBar from '../SideBar/index';
 import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
@@ -7,12 +7,10 @@ import FeaturedCard from '../FeaturedCard/index';
 import featuredCard from '../../constants/FeaturedCard';
 
 export default function LightMode() {
-  const {showMenu, setShowMenu, setIsDarkMode, dominantColor} = useContext(UserContext);
-
-  const main_bg = 'bg-gradient-to-b from-[' + dominantColor + '] via-zinc to-zinc';
+  const {showMenu, setShowMenu, setIsDarkMode} = useContext(UserContext);
 
   return (
-    <div className={main_bg}>
+    <div className={light.main_bg}>
       <header className='bg-lightanime'>
         <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
           Re-Watch
