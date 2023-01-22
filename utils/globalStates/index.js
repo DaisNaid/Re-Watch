@@ -9,7 +9,7 @@ export default function useGlobalState() {
     const [dominantColor, setDominantColor] = useState('#d4d4d8');
 
     useEffect(() => {
-        defaultMode.current = localStorage.getItem('darkmode')
+        defaultMode.current = JSON.parse(localStorage.getItem('darkmode'));
     }, [isDarkMode])
 
     const globalStates = {
