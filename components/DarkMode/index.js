@@ -6,6 +6,8 @@ import dark from '../../constants/DarkMode';
 import SideBar from '../../components/SideBar/index';
 import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
+import FeaturedCard from '../FeaturedCard';
+import featuredCard from '../../constants/FeaturedCard';
 
 export default function DarkMode() {
   const {showMenu, setShowMenu, isDarkMode, setIsDarkMode} = useContext(UserContext);
@@ -45,6 +47,12 @@ export default function DarkMode() {
         </section>
       </header>
       <main className='min-h-[80vh]'>
+        <FeaturedCard 
+          containerStyle={featuredCard.containerDark} 
+          imageStyle={featuredCard.imageDark}
+          previewStyle={featuredCard.previewDark} 
+          myListStyle={featuredCard.myListDark}
+        />
         <span id='menu' className='fixed top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
           {icons.menu}
         </span>

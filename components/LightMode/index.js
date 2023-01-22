@@ -4,6 +4,7 @@ import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
 import light from '../../constants/LightMode';
 import FeaturedCard from '../FeaturedCard/index';
+import featuredCard from '../../constants/FeaturedCard';
 
 export default function LightMode() {
   const {showMenu, setShowMenu, setIsDarkMode} = useContext(UserContext);
@@ -17,7 +18,12 @@ export default function LightMode() {
         <span className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
       <main className='min-h-[85vh]'>
-        <FeaturedCard />
+        <FeaturedCard 
+          containerStyle={featuredCard.containerLight}
+          imageStyle={featuredCard.imageLight}
+          previewStyle={featuredCard.previewLight} 
+          myListStyle={featuredCard.myListLight}
+        />
         <p className={light.motto}>
           Never miss a likely favorite!
         </p>   

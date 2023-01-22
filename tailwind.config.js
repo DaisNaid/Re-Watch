@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
       darkanime: '#2b1055',
+      dark_inner: '#7c66dc',
       lightanime: '#3e63dd',
       light_inner: '#8da4ef',
       zinc: '#d4d4d8',
