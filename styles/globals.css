@@ -4,7 +4,7 @@
 
 html {
   color: white;
-  background-color: red;
+  background-color: linear-gradient(to top, transparent, white);
 }
 
 .watch-drop {
@@ -60,5 +60,6 @@ html {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    background-color: linear-gradient(to top, transparent, black);
   }
 }
