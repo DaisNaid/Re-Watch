@@ -1,4 +1,6 @@
-[
+import AoS from './images/AlchemyOfSouls.jpg';
+
+const series = [
     {
         "title": "Alchemy of Souls",
         "korean-title": "",
@@ -12,7 +14,8 @@
                 "episode": "10"
             }
         ], 
-        "rating": "9"
+        "rating": "9",
+        "image": AoS
     },
     {
         "title": "Into the Abyss",
@@ -58,4 +61,6 @@
         ], 
         "rating": "9"
     }
-]
+];
+
+export default series;

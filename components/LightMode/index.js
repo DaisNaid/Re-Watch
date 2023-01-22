@@ -3,8 +3,7 @@ import SideBar from '../SideBar/index';
 import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
 import light from '../../constants/LightMode';
-
-//Add switch to Dark Mode
+import FeaturedCard from '../FeaturedCard/index';
 
 export default function LightMode() {
   const {showMenu, setShowMenu, setIsDarkMode} = useContext(UserContext);
@@ -18,6 +17,7 @@ export default function LightMode() {
         <span className='absolute top-5 right-5 text-xl opacity-75' onClick={() => setIsDarkMode(true)}>{icons.moonlight}</span>
       </header>
       <main className='min-h-[85vh]'>
+        <FeaturedCard />
         <p className={light.motto}>
           Never miss a likely favorite!
         </p>   
@@ -25,6 +25,7 @@ export default function LightMode() {
           {icons.menu}
         </span>
         {showMenu ? <SideBar /> : <></>}
+        <div className='text-black text-xl absolute top-[70%] left-24'>Gallery Coming Soon...</div>
       </main>
       <footer className='font-bold text-lightanime text-center p-4'>
         &copy; 2022 Re-Watch

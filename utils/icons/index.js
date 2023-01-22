@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars, faXmark, faCertificate, faCaretRight, faCaretDown, 
-    faPowerOff, faSun, faMoon
+    faPowerOff, faSun, faMoon, faPlus, faPlay
 } from '@fortawesome/free-solid-svg-icons';
 
 const icons = {
@@ -12,6 +12,8 @@ const icons = {
     signIn: <FontAwesomeIcon icon={faPowerOff} />,
     daylight: <FontAwesomeIcon icon={faSun} />,
     moonlight: <FontAwesomeIcon icon={faMoon} />,
+    add: <FontAwesomeIcon icon={faPlus} />,
+    play: <FontAwesomeIcon icon={faPlay} />
 };
 
 export default icons;
