@@ -64,7 +64,7 @@ export default function DarkMode() {
           previewStyle={featuredCard.previewDark} 
           myListStyle={featuredCard.myListDark}
         />
-        <span id='menu' className='fixed top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
+        <span id='menu' className='absolute top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
           {icons.menu}
         </span>
         {showMenu ? <SideBar /> : <></>}
