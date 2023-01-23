@@ -8,15 +8,25 @@ import featuredCard from '../../constants/FeaturedCard';
 
 export default function LightMode() {
   const { showMenu, setShowMenu, setIsDarkMode, dominantColor } = useContext(UserContext);
-  
-  useEffect(() => {
-    let main_bg = document.getElementById('main_bg');
-    main_bg.style.setProperty('--dominantColor', dominantColor);
 
+  useEffect(() => {
     let mode = document.getElementById('modeToggle');
+    let main_bg = document.getElementById('main_bg');
+    let motto = document.getElementById('motto');
+
+    main_bg.style.setProperty('--dominantColor', dominantColor);
     mode.addEventListener('click', () => {
       JSON.stringify(localStorage.setItem('darkmode', true));
     })
+
+    window.addEventListener('scroll', function () {
+      let value = window.scrollY;
+      if (value > 590) {
+        motto.className = light.fixed_motto;
+      } else{
+        motto.className = light.motto;
+      }
+    });
   }, [dominantColor])
 
   return (
@@ -34,7 +44,7 @@ export default function LightMode() {
           previewStyle={featuredCard.previewLight} 
           myListStyle={featuredCard.myListLight}
         />
-        <p className={light.motto}>
+        <p id='motto' className={light.motto}>
           Never miss a likely favorite!
         </p>
         <span id='menu' className='absolute top-5 left-5 text-xl' onClick={() => setShowMenu(true)}>
