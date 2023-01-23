@@ -22,10 +22,14 @@ export default function DarkMode() {
     const motion = async () => {
       let stars = document.getElementById('stars');
       let star = document.getElementById('star');
+      let featured = document.getElementById('featured');
       window.addEventListener('scroll', function () {
         let value = window.scrollY;
+        const elementHeight = featured.scrollHeight;
+        let opacity = ((1 - (elementHeight - value) / elementHeight) * 1.6) + 0.2;
         stars.style.left = value * 0.25 + 'px';
-        star.style.top = value * 1.05 + 'px';
+        star.style.top = value * 1.05 + 'px';      
+        featured.style.opacity = opacity;
       });
     };
     const setColor = () => {
@@ -58,7 +62,8 @@ export default function DarkMode() {
         </section>
       </header>
       <main id='content' className={dark.contentBg}>
-        <FeaturedCard 
+        <FeaturedCard
+          id={'featured'}
           containerStyle={featuredCard.containerDark} 
           imageStyle={featuredCard.imageDark}
           previewStyle={featuredCard.previewDark} 
@@ -68,6 +73,9 @@ export default function DarkMode() {
           {icons.menu}
         </span>
         {showMenu ? <SideBar /> : <></>}
+        <div id='gallery' className='mt-16 text-center'>
+          <span>Gallery Coming Soon...</span>
+        </div>
       </main>
       <footer className='font-bold text-white text-center p-4'>
         &copy; 2022 Re-Watch
