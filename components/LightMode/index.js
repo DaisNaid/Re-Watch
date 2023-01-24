@@ -5,6 +5,10 @@ import { UserContext } from '../../pages/_app';
 import light from '../../constants/LightMode';
 import FeaturedCard from '../FeaturedCard/index';
 import featuredCard from '../../constants/FeaturedCard';
+import Image from 'next/image';
+import series from '../../assets/data';
+
+const image = series[0].image;
 
 export default function LightMode() {
   const { showMenu, setShowMenu, setIsDarkMode, dominantColor } = useContext(UserContext);
@@ -22,9 +26,11 @@ export default function LightMode() {
     window.addEventListener('scroll', function () {
       let value = window.scrollY;
       if (value > 590) {
-        motto.className = light.fixed_motto;
+        motto.className = light.motto + ' sticky';
+        main_bg.className = light.main_bg + ' galleryLight';
       } else{
         motto.className = light.motto;
+        main_bg.className = light.main_bg;
       }
     });
   }, [dominantColor])
@@ -51,7 +57,98 @@ export default function LightMode() {
           {icons.menu}
         </span>
         {showMenu ? <SideBar /> : <></>}
-        <div className='text-black text-xl text-center mt-12'>Gallery Coming Soon...</div>
+        <div>
+          <section className='grid grid-flow-row gap-2 mx-0.5 my-4'>
+              <span className='text-xl font-medium text-black px-1'>Trending</span>
+              <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-2 snap-x'>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>    
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>     
+              </div>
+          </section>
+          <section className='grid grid-flow-row gap-2 mx-0.5 my-4'>
+              <span className='text-xl font-medium text-black px-1'>Can&apos;t Miss</span>
+              <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-2 snap-x'>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>    
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>     
+              </div>
+          </section>
+          <section className='grid grid-flow-row gap-2 mx-0.5 my-4'>
+              <span className='text-xl font-medium text-black px-1'>Old School</span>
+              <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-2 snap-x'>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>    
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>     
+              </div>
+          </section>
+          <section className='grid grid-flow-row gap-2 mx-0.5 my-4'>
+              <span className='text-xl font-medium text-black px-1'>FOMO</span>
+              <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-2 snap-x'>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>    
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>     
+              </div>
+          </section>
+          <section className='grid grid-flow-row gap-2 mx-0.5 my-4'>
+              <span className='text-xl font-medium text-black px-1'>Upcoming</span>
+              <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-2 snap-x'>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>    
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] snap-end'/>     
+              </div>
+          </section>
+        </div>
       </main>
       <footer className='font-bold text-lightanime text-center p-4'>
         &copy; 2022 Re-Watch

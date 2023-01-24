@@ -10,11 +10,22 @@ html {
 .dominantColorBG {
   --bg: linear-gradient(var(--dominantColor), var(--dominantColor), #d4d4d8);
   background: var(--bg);
+  transition: background-color 1s ease-in-out;
+}
+
+.galleryLight {
+  background: linear-gradient(transparent,#d4d4d8, #d4d4d8);
+  transition: background-color 1s ease-in-out;
 }
 
 .dominantColorBG_dark {
   --bg: linear-gradient(transparent, var(--dominantColor), black);
   background: var(--bg);
+}
+
+.galleryDark {
+  background: black;
+  transition: background-color 3s ease-in-out;
 }
 
 .watch-drop {
@@ -65,6 +76,13 @@ html {
 
 .comet:hover {
   background-size: 0 3px, 100% 3px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  min-width: 100%;
+  transition: all 5s linear;
 }
 
 @media (prefers-color-scheme: dark) {
