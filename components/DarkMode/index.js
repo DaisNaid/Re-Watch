@@ -8,9 +8,9 @@ import icons from '../../utils/icons/index';
 import { UserContext } from '../../pages/_app';
 import FeaturedCard from '../FeaturedCard';
 import featuredCard from '../../constants/FeaturedCard';
-// import series from '../../assets/data';
+import series from '../../assets/data';
 
-import image from '../../assets/images/Abyss.jpeg';
+const image = series[0].image;
 
 export default function DarkMode() {
   const {showMenu, setShowMenu, isDarkMode, setIsDarkMode, dominantColor} = useContext(UserContext);

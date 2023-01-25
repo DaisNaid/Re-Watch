@@ -1,13 +1,14 @@
 import Image from 'next/image';
-import series from '../../assets/data';
+// import series from '../../assets/data';
 import icons from '../../utils/icons';
 import { useContext, useEffect } from 'react';
 import { average } from 'color.js';
 import { UserContext } from '../../pages/_app';
+import featuredImage from '../../assets/images/6993435.jpg';
 
 export default function FeaturedCard ({id, containerStyle, imageStyle, previewStyle, myListStyle}) {
     const { setDominantColor } = useContext(UserContext);
-    const featuredImage = series[0].image;
+    // const featuredImage = series[0].image;
 
     useEffect(() => {
         const setBG = async() => {
@@ -24,7 +25,7 @@ export default function FeaturedCard ({id, containerStyle, imageStyle, previewSt
         <div className={imageStyle}>
             <Image alt="Alchemy of Souls" src={featuredImage} className='rounded-xl' />
         </div>
-        <div className='flex flex-row gap-2 py-2'>
+        <div className='flex flex-row gap-2 py-2 relative'>
             <div className={previewStyle}>
                 <span className='py-1 pl-2 text-xl text-center'>{icons.play}</span>
                 <span className='py-2 pr-2 font-medium'>Preview</span>
