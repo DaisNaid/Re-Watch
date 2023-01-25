@@ -1,14 +1,13 @@
 import Image from 'next/image';
-// import series from '../../assets/data';
+import series from '../../assets/data';
 import icons from '../../utils/icons';
 import { useContext, useEffect } from 'react';
 import { average } from 'color.js';
 import { UserContext } from '../../pages/_app';
-import featuredImage from '../../assets/images/6993435.jpg';
 
 export default function FeaturedCard ({id, containerStyle, imageStyle, previewStyle, myListStyle}) {
     const { setDominantColor } = useContext(UserContext);
-    // const featuredImage = series[0].image;
+    const featuredImage = series[0].image;
 
     useEffect(() => {
         const setBG = async() => {
