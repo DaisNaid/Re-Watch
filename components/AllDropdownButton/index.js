@@ -30,7 +30,7 @@ export default function AllDropdown() {
 
   return (
     <div className='flex items-center p-8 max-h-8 no-underline comet'>
-        <span className={isDarkMode ? 'mr-4 hover:text-purple-500' : 'mr-4 hover:text-lightanime'} onClick={handleDropdown}>{icon}</span>
+        <span className={isDarkMode ? 'mr-4 hover:text-slate-400' : 'mr-4 hover:text-lightanime'} onClick={handleDropdown}>{icon}</span>
         <span>{value}</span>
         <div className={isDarkMode ? dropDown.bg_dark : dropDown.bg_light}>
             <ul className='py-2'>
