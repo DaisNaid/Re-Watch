@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import DarkMode from '../components/DarkMode/index';
-import LightMode from '../components/LightMode/index';
+import LightMode404 from '../components/Light404/index';
 import { UserContext } from './_app';
 import { useMediaQuery } from 'react-responsive';
 
@@ -17,5 +17,5 @@ export default function Home() {
 
   // type error because Darkmode and Lightmode in tags are being recognized as types
 
- return isDarkMode ? <DarkMode /> : <LightMode />
+ return isDarkMode ? <DarkMode /> : <LightMode404 />
 }
