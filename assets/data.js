@@ -1,4 +1,4 @@
-import AoS from './images/AlchemyOfSouls.jpg';
+import Strange from './images/strange.jpg';
 
 const series = [
     {
@@ -15,7 +15,7 @@ const series = [
             }
         ], 
         "rating": "9",
-        "image": AoS
+        "image": Strange
     },
     {
         "title": "Into the Abyss",

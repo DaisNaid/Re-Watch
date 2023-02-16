@@ -78,13 +78,6 @@ html {
   background-size: 0 3px, 100% 3px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  min-width: 100%;
-  transition: all 5s linear;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

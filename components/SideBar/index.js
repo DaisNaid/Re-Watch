@@ -40,9 +40,6 @@ export default function SideBar() {
   return (
     <div>
       <div className='fixed top-0 left-0 h-screen w-48 glass'>
-        <span className='absolute top-5 left-5 text-xl' onClick={() =>setShowMenu(false)}>
-            {icons.close}
-        </span>
         <div className={isDarkMode ? 'absolute bottom-[10vh] left-5 text-purple-500' : 'absolute bottom-[10vh] left-5 text-lightanime'}>
           {icons.verfied}
           <span className='ml-2 text-white'>Tryve</span>

@@ -31,7 +31,7 @@ module.exports = {
     },
     keyframes: {
       glow_text: {
-        '0%, 100%': { color: '#8da4ef' },
+        '0%, 100%': { color: '#cd2b31' },
         '50%': { color: 'white' },
       },
       glow_motto: {

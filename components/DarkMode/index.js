@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useContext, useEffect } from 'react';
-import stars from '../../assets/images/stars.png';
 import dark from '../../constants/DarkMode';
 import SideBar from '../../components/SideBar/index';
 import icons from '../../utils/icons/index';
@@ -12,33 +11,38 @@ import IsInViewport from '../../hooks/useIsInViewport';
 
 const image = series[0].image;
 
+const getElement = (ids) => {
+  return ids.map((id) => ({[id]: document.getElementById(id)})
+)};
+
 export default function DarkMode() {
   const {showMenu, setShowMenu, setIsDarkMode, dominantColor} = useContext(UserContext);
 
   useEffect(() => {
-    let mode = document.getElementById('modeToggle');
-    mode.addEventListener('click', () => {
+    const elements = getElement([
+      'modeToggle', 'content', 'featured', 'gallery', 'slogan', 'header'
+    ]);
+    console.log(elements);
+    elements[0].modeToggle.addEventListener('click', () => {
       let userMode = JSON.parse(localStorage.getItem('darkmode'));
       userMode = false;
       JSON.stringify(localStorage.setItem('darkmode', userMode));
     })
     const motion = async () => {
-      let stars = document.getElementById('stars');
-      let content = document.getElementById('content');
-      let featured = document.getElementById('featured');
-      let gallery = document.getElementById('gallery');
       window.addEventListener('scroll', function () {
         let value = window.scrollY;
-        const elementHeight = featured.scrollHeight;
+        const elementHeight = elements[2].featured.scrollHeight;
         let opacity = ((1 - (elementHeight - value) / elementHeight) * 1.8) + 0.2;
-        stars.style.left = value * 0.25 + 'px';
-        featured.style.opacity = opacity;
         const cardIsInViewport = IsInViewport(featured);
         if (!cardIsInViewport) {
-          content.className = dark.contentBg + ' galleryDark';
+          elements[1].content.className = dark.contentBg + ' galleryDark';
+          elements[4].slogan.className = dark.sloganInMotion;
+          elements[5].header.className = dark.headerInMotion;
         } else {
-          gallery.style.opacity = opacity;
-          content.className = dark.contentBg;
+          elements[3].gallery.style.opacity = opacity;
+          elements[1].content.className = dark.contentBg;
+          elements[4].slogan.className = dark.slogan;
+          elements[5].header.className = dark.header;
         }
       });
     };
@@ -52,19 +56,21 @@ export default function DarkMode() {
 
   return (
     <div id='main_bg' className={dark.main_bg}>
-      <header className='overflow-hidden'>
-        <h1 className='text-center font-bold text-3xl text-zinc shadow-md py-4'>
+      <header id='header' className={dark.header}>
+        <span id='menu' className='absolute top-5 left-5 text-lg' onClick={() => setShowMenu(true)}>
+          {icons.menu}
+        </span>
+        <h1 className={dark.title}>
           Re-Watch
         </h1>
-        <span id='modeToggle' className='absolute top-5 right-5 text-lg opacity-75' onClick={() => setIsDarkMode(false)}>{icons.daylight}</span>
-        <p className='text-center text-zinc pt-6 animate-glow_text'>
-          Never miss a likely favorite!
-        </p>
-        <section className='relative max-w-full max-h-full p-20'>
-          <Image id='stars' alt='stars' src={stars} className={dark.stars}/>
-        </section>
+        <span id='modeToggle' className={dark.mode} onClick={() => setIsDarkMode(false)}>{
+          icons.daylight
+        }</span>
       </header>
       <main id='content' className={dark.contentBg}>
+        <p id='slogan' className={dark.slogan}>
+          Never miss a likely favorite!
+        </p>
         <FeaturedCard
           id={'featured'}
           containerStyle={featuredCard.containerDark} 
@@ -72,9 +78,6 @@ export default function DarkMode() {
           previewStyle={featuredCard.previewDark} 
           myListStyle={featuredCard.myListDark}
         />
-        <span id='menu' className='absolute top-5 left-5 text-lg' onClick={() => setShowMenu(true)}>
-          {icons.menu}
-        </span>
         {showMenu ? <SideBar /> : <></>}
         <div id='gallery' className='opacity-20 ml-2.5'>
           <section className='grid grid-flow-row gap-2 my-8'>
