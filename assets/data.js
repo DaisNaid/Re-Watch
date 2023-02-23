@@ -1,4 +1,6 @@
 import Strange from './images/strange.jpg';
+import hawk2 from './images/hawk.jpg';
+import wv from './images/wv.jpg';
 
 const series = [
     {
@@ -26,7 +28,8 @@ const series = [
                 "episode": "16"
             }
         ], 
-        "rating": "8"
+        "rating": "8",
+        "image": hawk2
     },
     {
         "title": "Mr Queen",
@@ -37,7 +40,8 @@ const series = [
                 "episode": "20"
             }
         ], 
-        "rating": "9.5"
+        "rating": "9.5",
+        "image": wv
     },
     {
         "title": "It's okay not to be okay",

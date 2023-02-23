@@ -7,7 +7,7 @@ import { UserContext } from '../../pages/_app';
 
 export default function FeaturedCard ({id, containerStyle, imageStyle, previewStyle, myListStyle}) {
     const { setDominantColor } = useContext(UserContext);
-    const featuredImage = series[0].image;
+    const featuredImage = series[1].image;
 
     useEffect(() => {
         const setBG = async() => {

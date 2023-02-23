@@ -8,8 +8,11 @@ import FeaturedCard from '../FeaturedCard';
 import featuredCard from '../../constants/FeaturedCard';
 import series from '../../assets/data';
 import IsInViewport from '../../hooks/useIsInViewport';
+import civil from '../../assets/images/civil.jpeg';
 
 const image = series[0].image;
+const image2 = series[1].image;
+const image3 = series[2].image;
 
 const getElement = (ids) => {
   return ids.map((id) => ({[id]: document.getElementById(id)})
@@ -83,22 +86,22 @@ export default function DarkMode() {
           <section className='grid grid-flow-row gap-2 my-8'>
               <span className='text-lg font-medium px-1'>Trending</span>
               <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-4 snap-x'>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
+                <Image alt='Image' src={image2} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image3} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={civil} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
               </div>
           </section>
           <section className='grid grid-flow-row gap-2 my-8'>
               <span className='text-lg font-medium px-1'>Can&apos;t Miss</span>
               <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-4 snap-x'>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
+                <Image alt='Image' src={civil} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image2} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image3} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
@@ -108,9 +111,9 @@ export default function DarkMode() {
           <section className='grid grid-flow-row gap-2 my-8'>
               <span className='text-lg font-medium px-1'>Old School</span>
               <div className='grid grid-flow-col overflow-x-scroll scroll-smooth gap-4 snap-x'>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
-                <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
+                <Image alt='Image' src={image3} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={civil} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
+                <Image alt='Image' src={image2} className='min-w-[35vw] min-h-full snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>
                 <Image alt='Image' src={image} className='min-w-[35vw] snap-end rounded-lg'/>

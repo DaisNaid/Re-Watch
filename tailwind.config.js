@@ -17,6 +17,9 @@ module.exports = {
       violet: '#0f172a',
       squidred: '#ed1b76',
       squidgreen: '#037a76',
+      marvelLight: '#e5484d',
+      marvel: '#cd2b31',
+      marvelDark: '#aa2429'
       },
       borderRadius: {
         circle: '50%',
