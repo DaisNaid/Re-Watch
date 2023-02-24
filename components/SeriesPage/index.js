@@ -36,7 +36,7 @@ export default function SeriesPage () {
         <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
       </div>
       <main className={seriesPage.content}>
-        <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md z-[1]'>
+        <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md z-[1] overflow-hidden'>
             <Image alt='Series' src={wv} className={seriesPage.image}/>
             <div className='flex flex-col gap-1'>
                 <span className='text-xl font-semibold'>WandaVision</span>
