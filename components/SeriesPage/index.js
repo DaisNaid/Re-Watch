@@ -23,10 +23,10 @@ export default function SeriesPage () {
 
     return (<div>
         <header id='header'>
-            <span id='menu' className='absolute top-5 left-5 text-2xl text-zinc'>
+            <span className='absolute top-5 left-5 text-2xl text-zinc'>
             {icons.back}
             </span>
-            <span id='menu' className='absolute top-5 right-5 text-xl text-gold'>
+            <span className='absolute top-5 right-5 text-xl text-gold'>
             {icons.rating}
             </span>
             <div className='w-full'>
@@ -40,9 +40,9 @@ export default function SeriesPage () {
                 <span className='text-xl font-semibold'>WandaVision</span>
                 <span className='text-sm'>Aired</span>
             </div>
-            <span className='ml-6 text-3xl text-marvelLight'>{icons.added}</span>
+            <span className='ml-6 text-3xl text-marvelLight overflow-hidden'>{icons.added}</span>
         </div>
-        <div className='mb-8 grid grid-flow-col gap-4 justify-center'>
+        <div className='mb-8 grid grid-flow-col gap-4 justify-center overflow-hidden'>
             <span className='bg-marvelLight px-2 rounded-lg'>Drama</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Mystery</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Romance</span>
@@ -52,7 +52,7 @@ export default function SeriesPage () {
             Living idealized suburban lives, super-powered beings Wanda and Vision begin to suspect that everything is not as it seems.
             evcgvbjhgfdxcv benmdkfjdhgvdbnksoieudgsbzxnmkdkrhresbdnzxmkhgbewdsnmkwehgbdsnzxkdhgbendsmzkshwbedsnmzckhbndscxkhsgrbnsdmcxkhgrbndsmcxkhrbdnsmckhgwbndsmczkdhbwdsncmzkdshwbdsncmzkdshwbdnsckiugbdnsmckfurhgbsdnczkisfurhbfsnczkifurhfsnckiwreuhfsndkdiwruehfsnjkadiwruhfwsdakdiwruhfs
         </section>
-        <section className='mt-8'>
+        <section className='mt-8 overflow-hidden'>
             <span className='text-xl font-semibold'>Seasons</span>
             <div className='grid grid-flow-row gap-6 mt-4'>
                 <div className='grid grid-flow-col gap-4'>
