@@ -19,7 +19,9 @@ module.exports = {
       squidgreen: '#037a76',
       marvelLight: '#e5484d',
       marvel: '#cd2b31',
-      marvelDark: '#aa2429'
+      marvelDark: '#aa2429',
+      marvelBg: '#1B1212',
+      gold: '#FFD700'
       },
       borderRadius: {
         circle: '50%',
