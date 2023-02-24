@@ -13,8 +13,6 @@ import hulu from '../../assets/images/hulu.jpeg';
 // Bg Image - 1920 x 1080 || 3840 x 2160
 
 export default function SeriesPage () {
-    const {showMenu, setShowMenu, setIsDarkMode, dominantColor} = useContext(UserContext);
-
     const toggleTruncate = ({ target }) => {
         if (target.className === 'break-words') {
             target.className = 'truncate'
@@ -24,7 +22,7 @@ export default function SeriesPage () {
     }
 
     return (<div>
-        <header id='header' className='z-[1] overflow-hidden'>
+        <header id='header'>
             <span id='menu' className='absolute top-5 left-5 text-2xl text-zinc'>
             {icons.back}
             </span>
@@ -36,19 +34,19 @@ export default function SeriesPage () {
             </div>
       </header>
       <main className={seriesPage.content}>
-        <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md'>
+        <div className='flex flex-row items-center sticky top-0 backdrop-blur-md z-[1]'>
             <Image alt='Series' src={wv} className={seriesPage.image}/>
-            <div className='flex flex-col gap-1'>
+            <div className='flex flex-col'>
                 <span className='text-xl font-semibold'>WandaVision</span>
                 <span className='text-sm'>Aired</span>
             </div>
-            <span className='ml-6 text-3xl text-marvelLight'>{icons.added}</span>
+            <span className='mr-3 text-3xl text-marvelLight'>{icons.added}</span>
         </div>
-        <div className='mb-8 top-[-2rem] grid grid-flow-col gap-4 justify-center'>
+        <div className='mb-8 grid grid-flow-col justify-center'>
             <span className='bg-marvelLight px-2 rounded-lg'>Drama</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Mystery</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Romance</span>
-            <span className='bg-marvelLight px-2 rounded-lg'>Sitcom</span>
+            <span className='bg-marvelLight px-2 rounded-lg mr-2'>Sitcom</span>
         </div>
         <section className='truncate' onClick={(e) => toggleTruncate(e)}>
             Living idealized suburban lives, super-powered beings Wanda and Vision begin to suspect that everything is not as it seems.
@@ -62,33 +60,33 @@ export default function SeriesPage () {
                     <span>Season 1</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={100}/>
-                    <div className='flex flex-row gap-2'>
+                    {/* <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
                         <span>8/8</span>
                         <span>{icons.forward}</span>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='grid grid-flow-col gap-4'>
                     <span className={seriesPage.circle}></span>
                     <span>Season 2</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={10}/>
-                    <div className='flex flex-row gap-2'>
+                    {/* <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
                         <span>1/8</span>
                         <span>{icons.forward}</span>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='grid grid-flow-col gap-4'>
                     <span className={seriesPage.notCircle}></span>
                     <span>Season 3</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={0}/>
-                    <div className='flex flex-row gap-2'>
+                    {/* <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
                         <span>0/8</span>
                         <span>{icons.forward}</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
