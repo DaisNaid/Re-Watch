@@ -1,6 +1,6 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import DarkMode from '../components/DarkMode/index';
-import LightMode404 from '../components/Light404/index';
+import LightMode404 from '../components/SeriesPage/index';
 import { UserContext } from './_app';
 import { useMediaQuery } from 'react-responsive';
 
