@@ -36,7 +36,7 @@ export default function SeriesPage () {
         <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
       </div>
       <main className={seriesPage.content}>
-        <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md z-[1] overflow-hidden'>
+        <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md'>
             <Image alt='Series' src={wv} className={seriesPage.image}/>
             <div className='flex flex-col gap-1'>
                 <span className='text-xl font-semibold'>WandaVision</span>
@@ -44,7 +44,7 @@ export default function SeriesPage () {
             </div>
             <span className='ml-6 text-3xl text-marvelLight'>{icons.added}</span>
         </div>
-        <div className='mt-8 relative top-[-2rem] grid grid-flow-col gap-4 justify-center'>
+        <div className='mb-8 top-[-2rem] grid grid-flow-col gap-4 justify-center'>
             <span className='bg-marvelLight px-2 rounded-lg'>Drama</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Mystery</span>
             <span className='bg-marvelLight px-2 rounded-lg'>Romance</span>
