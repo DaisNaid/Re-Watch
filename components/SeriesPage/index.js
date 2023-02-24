@@ -24,17 +24,17 @@ export default function SeriesPage () {
     }
 
     return (<div>
-        <header id='header' className=''>
-        <span id='menu' className='absolute top-5 left-5 text-2xl text-zinc'>
-          {icons.back}
-        </span>
-        <span id='menu' className='absolute top-5 right-5 text-xl text-gold'>
-          {icons.rating}
-        </span>
+        <header id='header' className='z-[1] overflow-hidden'>
+            <span id='menu' className='absolute top-5 left-5 text-2xl text-zinc'>
+            {icons.back}
+            </span>
+            <span id='menu' className='absolute top-5 right-5 text-xl text-gold'>
+            {icons.rating}
+            </span>
+            <div className='w-full'>
+                <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
+            </div>
       </header>
-      <div className='w-full'>
-        <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
-      </div>
       <main className={seriesPage.content}>
         <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md'>
             <Image alt='Series' src={wv} className={seriesPage.image}/>
