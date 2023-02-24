@@ -20,7 +20,7 @@ const icons = {
     forward: <FontAwesomeIcon icon={faAngleRight} />,
     completed: <FontAwesomeIcon icon={faCircleCheck} />,
     started: <FontAwesomeIcon icon={faCircle}/>,
-    rating: <FontAwesomeIcon icon={faStar} pull/>
+    rating: <FontAwesomeIcon icon={faStar}/>
 };
 
 export default icons;
