@@ -10,14 +10,17 @@ import netflix from '../../assets/images/netflix.png';
 import hulu from '../../assets/images/hulu.jpeg';
 import useProgress from '../../hooks/useProgress';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../pages/_app';
+import useRange from '../../hooks/useRange';
 
 // Bg Image - 1920 x 1080 || 3840 x 2160
 
 export default function SeriesPage () {
     const router = useRouter();
     const {displayRating, setDisplayRating} = useContext(UserContext);
+    const episodes = useRange(0, 8);
+    const [episode, setEpisode] = useState(0);
 
     const toggleTruncate = ({ target }) => {
         if (target.className === 'break-words') {
@@ -29,6 +32,18 @@ export default function SeriesPage () {
 
     const handlePrevious = () => {
         router.replace('/watchlist');
+    }
+
+    const handleEpisode = (type) => {
+        const current = episodes.indexOf(episode);
+        if (type === 'back' && current !== 0) {
+            const updated = episodes[current - 1];
+            setEpisode(updated);
+        }
+        if (type === 'forward' && current !== 8) {
+            const updated = episodes[current + 1];
+            setEpisode(updated);
+        }
     }
 
     return (<div>
@@ -70,11 +85,11 @@ export default function SeriesPage () {
                     <span className='text-2xl text-marvelLight'>{icons.completed}</span>
                     <span>Season 1</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
-                    <ProgressBar completed={useProgress(8, 8)}/>
+                    <ProgressBar completed={useProgress(episode, 8)}/>
                     <div className='flex flex-row gap-2'>
-                        <span>{icons.back}</span>
-                        <span>8/8</span>
-                        <span>{icons.forward}</span>
+                        <span onClick={() => handleEpisode('back')}>{icons.back}</span>
+                        <span>{episode}/8</span>
+                        <span onClick={() => handleEpisode('forward')}>{icons.forward}</span>
                     </div>
                 </div>
                 <div className='grid grid-flow-col gap-4'>
@@ -83,9 +98,9 @@ export default function SeriesPage () {
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={useProgress(3, 8)}/>
                     <div className='flex flex-row gap-2'>
-                        <span>{icons.back}</span>
+                        <span onClick={() => handleEpisode('back')}>{icons.back}</span>
                         <span>3/8</span>
-                        <span>{icons.forward}</span>
+                        <span onClick={() => handleEpisode('forward')}>{icons.forward}</span>
                     </div>
                 </div>
                 <div className='grid grid-flow-col gap-4'>
@@ -94,9 +109,9 @@ export default function SeriesPage () {
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={useProgress(0, 8)}/>
                     <div className='flex flex-row gap-2'>
-                        <span>{icons.back}</span>
+                        <span onClick={() => handleEpisode('back')}>{icons.back}</span>
                         <span>0/8</span>
-                        <span>{icons.forward}</span>
+                        <span onClick={() => handleEpisode('forward')}>{icons.forward}</span>
                     </div>
                 </div>
             </div>

@@ -17,6 +17,7 @@ export default function ProgressBar (props) {
       borderRadius: 'inherit',
       textAlign: 'right',
       marginLeft: -1,
+      transition: 'width 0.5s ease-in-out'
     }
   
     return (

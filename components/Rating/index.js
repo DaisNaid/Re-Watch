@@ -15,7 +15,7 @@ export default function Rating () {
     return <div className='bg-transparent fixed top-10 right-0 px-2 mt-4'>
         <div className='grid grid-flow-col gap-4 my-2'>
             <span>{icons.people}</span>
-            <span className='text-gold'>8.5</span>
+            <span className='text-gold font-semibold'>8.5</span>
             <span />
         </div>
         <div className='grid grid-flow-col gap-4 mb-2'>
@@ -28,7 +28,7 @@ export default function Rating () {
                     ))
                 }
                 </select>
-            : <span className={rating === 'Unrated' ? 'text-zinc' : 'text-gold'}>{rating}</span>
+            : <span className={rating === 'Unrated' ? 'text-zinc' : 'text-gold font-semibold'}>{rating}</span>
             }
             <span id='edit' className='text-zinc' onClick={() => setOnEdit(!onEdit)}>{icons.edit}</span>
         </div>
