@@ -14,5 +14,5 @@ export interface Ctx {
   setSelectedTab: Dispatch<SetStateAction<string>>;
   setIsUser: Dispatch<SetStateAction<boolean>>;
   setDominantColor: Dispatch<SetStateAction<string>>;
-  setDisplayRating: Dispatch<SetStateAction<string>>;
+  setDisplayRating: Dispatch<SetStateAction<boolean>>;
 };
