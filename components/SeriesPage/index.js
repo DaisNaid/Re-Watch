@@ -1,7 +1,5 @@
-import { useContext } from 'react';
 import ProgressBar from '../ProgressBar/index';
 import Image from 'next/image';
-import { UserContext } from '../../pages/_app';
 import icons from '../../utils/icons';
 import wv from '../../assets/images/wv.jpg';
 import wv2 from '../../assets/images/wv2.jpg';
@@ -9,6 +7,7 @@ import seriesPage from '../../constants/SeriesPage';
 import disney from '../../assets/images/disney.jpeg';
 import netflix from '../../assets/images/netflix.png';
 import hulu from '../../assets/images/hulu.jpeg';
+import useProgress from '../../hooks/useProgress';
 
 // Bg Image - 1920 x 1080 || 3840 x 2160
 
@@ -59,7 +58,7 @@ export default function SeriesPage () {
                     <span className='text-2xl text-marvelLight'>{icons.completed}</span>
                     <span>Season 1</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
-                    <ProgressBar completed={100}/>
+                    <ProgressBar completed={useProgress(8, 8)}/>
                     <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
                         <span>8/8</span>
@@ -70,10 +69,10 @@ export default function SeriesPage () {
                     <span className={seriesPage.circle}></span>
                     <span>Season 2</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
-                    <ProgressBar completed={10}/>
+                    <ProgressBar completed={useProgress(3, 8)}/>
                     <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
-                        <span>1/8</span>
+                        <span>3/8</span>
                         <span>{icons.forward}</span>
                     </div>
                 </div>
@@ -81,7 +80,7 @@ export default function SeriesPage () {
                     <span className={seriesPage.notCircle}></span>
                     <span>Season 3</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
-                    <ProgressBar completed={0}/>
+                    <ProgressBar completed={useProgress(0, 8)}/>
                     <div className='flex flex-row gap-2'>
                         <span>{icons.back}</span>
                         <span>0/8</span>
