@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBars, faXmark, faCertificate, faCaretRight, faCaretDown, 
     faPowerOff, faSun, faMoon, faPlus, faPlay, faSquareCheck, faAngleLeft,
-    faCircleCheck, faAngleRight, faCircle, faStar
+    faCircleCheck, faAngleRight, faCircle, faStar, faPeopleGroup, faUser,
+    faPencil
 } from '@fortawesome/free-solid-svg-icons';
 
 const icons = {
@@ -20,7 +21,10 @@ const icons = {
     forward: <FontAwesomeIcon icon={faAngleRight} />,
     completed: <FontAwesomeIcon icon={faCircleCheck} />,
     started: <FontAwesomeIcon icon={faCircle}/>,
-    rating: <FontAwesomeIcon icon={faStar}/>
+    rating: <FontAwesomeIcon icon={faStar}/>,
+    people: <FontAwesomeIcon icon={faPeopleGroup}/>,
+    user: <FontAwesomeIcon icon={faUser}/>,
+    edit: <FontAwesomeIcon icon={faPencil}/>,
 };
 
 export default icons;

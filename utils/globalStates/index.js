@@ -6,6 +6,7 @@ export default function useGlobalState() {
     const [selectedTab, setSelectedTab] = useState('All');
     const [isUser, setIsUser] = useState(false);
     const [dominantColor, setDominantColor] = useState('#d4d4d8');
+    const [displayRating, setDisplayRating] = useState(false);
 
     useEffect(() => {
         if(typeof window === 'object') {
@@ -23,7 +24,9 @@ export default function useGlobalState() {
         isUser,
         setIsUser,
         dominantColor,
-        setDominantColor
+        setDominantColor,
+        displayRating,
+        setDisplayRating
     };
 
     return (globalStates);

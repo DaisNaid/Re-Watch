@@ -8,9 +8,11 @@ export interface Ctx {
   selectedTab: string;
   isUser: boolean;
   dominantColor:string;
+  displayRating: boolean;
   setShowMenu: Dispatch<SetStateAction<boolean>>;
   setIsDarkMode: Dispatch<SetStateAction<boolean>>;
   setSelectedTab: Dispatch<SetStateAction<string>>;
   setIsUser: Dispatch<SetStateAction<boolean>>;
   setDominantColor: Dispatch<SetStateAction<string>>;
+  setDisplayRating: Dispatch<SetStateAction<string>>;
 };

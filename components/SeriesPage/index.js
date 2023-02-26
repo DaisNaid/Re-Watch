@@ -1,4 +1,5 @@
 import ProgressBar from '../ProgressBar/index';
+import Rating from '../Rating/index';
 import Image from 'next/image';
 import icons from '../../utils/icons';
 import wv from '../../assets/images/wv.jpg';
@@ -8,10 +9,16 @@ import disney from '../../assets/images/disney.jpeg';
 import netflix from '../../assets/images/netflix.png';
 import hulu from '../../assets/images/hulu.jpeg';
 import useProgress from '../../hooks/useProgress';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import { UserContext } from '../../pages/_app';
 
 // Bg Image - 1920 x 1080 || 3840 x 2160
 
 export default function SeriesPage () {
+    const router = useRouter();
+    const {displayRating, setDisplayRating} = useContext(UserContext);
+
     const toggleTruncate = ({ target }) => {
         if (target.className === 'break-words') {
             target.className = 'truncate'
@@ -20,14 +27,19 @@ export default function SeriesPage () {
         }
     }
 
+    const handlePrevious = () => {
+        router.replace('/watchlist');
+    }
+
     return (<div>
         <header id='header'>
-            <span className='absolute top-5 left-5 text-2xl text-zinc'>
+            <span className='absolute top-5 left-5 text-2xl text-zinc' onClick={() => handlePrevious()}>
             {icons.back}
             </span>
-            <span className='absolute top-5 right-5 text-xl text-gold'>
+            <span className='absolute top-5 right-5 text-xl text-gold' onClick={() => setDisplayRating(!displayRating)}>
             {icons.rating}
             </span>
+            {displayRating ? <Rating /> : <></>}
             <div className='w-full'>
                 <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
             </div>
