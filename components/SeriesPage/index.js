@@ -4,13 +4,13 @@ import Image from 'next/image';
 import icons from '../../utils/icons';
 import wv from '../../assets/images/wv.jpg';
 import wv2 from '../../assets/images/wv2.jpg';
-import seriesPage from '../../constants/SeriesPage';
+import { seriesPage, seriesPageStyles } from '../../constants/SeriesPage';
 import disney from '../../assets/images/disney.jpeg';
 import netflix from '../../assets/images/netflix.png';
 import hulu from '../../assets/images/hulu.jpeg';
 import useProgress from '../../hooks/useProgress';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../pages/_app';
 import useRange from '../../hooks/useRange';
 
@@ -21,6 +21,20 @@ export default function SeriesPage () {
     const {displayRating, setDisplayRating} = useContext(UserContext);
     const episodes = useRange(0, 8);
     const [episode, setEpisode] = useState(0);
+    const [episodeIcon, setEpisodeIcon] = useState(seriesPageStyles.newSeason);
+    const progress = useProgress(episode, 8);
+
+    useEffect(() => {
+        if (progress === 0) {
+            setEpisodeIcon(seriesPageStyles.newSeason)
+            return;
+        } 
+        if (progress === 100) {
+            setEpisodeIcon(seriesPageStyles.completedSeason)
+            return;
+        }
+        setEpisodeIcon(seriesPageStyles.incompleteSeason)
+    }, [progress])
 
     const toggleTruncate = ({ target }) => {
         if (target.className === 'break-words') {
@@ -59,7 +73,7 @@ export default function SeriesPage () {
                 <Image alt='BG-Image' src={wv2} className={seriesPage.bgImage}/>
             </div>
       </header>
-      <main className={seriesPage.content}>
+      <main className={displayRating ? seriesPage.contentFull : seriesPage.content}>
         <div className='flex flex-row gap-3 items-center sticky top-0 backdrop-blur-md z-[1]'>
             <Image alt='Series' src={wv} className={seriesPage.image}/>
             <div className='flex flex-col gap-1'>
@@ -82,7 +96,7 @@ export default function SeriesPage () {
             <span className='text-xl font-semibold'>Seasons</span>
             <div className='grid grid-flow-row gap-6 mt-4'>
                 <div className='grid grid-flow-col gap-4'>
-                    <span className='text-2xl text-marvelLight'>{icons.completed}</span>
+                    {episodeIcon}
                     <span>Season 1</span>
                     {/* Current ep / total ep * 100 -> round to nearest whole number */}
                     <ProgressBar completed={useProgress(episode, 8)}/>
